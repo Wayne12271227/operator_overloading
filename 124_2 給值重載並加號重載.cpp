@@ -38,10 +38,11 @@ public:
 		age_ = new int(*p.age_);
 		return *this;
 	}
-	Person& operator+(const Person& p)
+		Person operator+(const Person& p)
 	{
-		*(this->age_) += *p.age_;
-		return *this;
+		Person temp = *this;
+		*temp.age_ = *(this->age_) + *p.age_;
+		return temp;
 	}
 
 };
